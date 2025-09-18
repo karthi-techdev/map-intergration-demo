@@ -3,6 +3,7 @@ import type { FC } from "react";
 import Map, { NavigationControl, Marker, Popup } from "react-map-gl/maplibre";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
+import { FaStar } from "react-icons/fa";
 
 interface MapInterfaceProps {
   center?: [number, number];
@@ -186,7 +187,9 @@ const MapInterface: FC<MapInterfaceProps> = ({
                   {/* Location pointer with smooth animation */}
                   {pointerVisible[property.id] && (
                     <div className={`marker-pointer ${showPointer ? 'active' : 'inactive'}`}>
-                      <img src={property.image} alt="Billboard" />
+                      <div className="round-img-pointer">
+                         <img src={property.image} alt="Billboard" />
+                      </div>
                     </div>
                   )}
                 </div>
@@ -208,14 +211,22 @@ const MapInterface: FC<MapInterfaceProps> = ({
                 >
                   <div className="popup-card">
                     <img src={property.image} alt="billboard" className="popup-img" />
+                    <div className="info">
                     <h3>{property.title}</h3>
                     <p>
                       {property.type}{" "}
-                      <span className="stars">{"⭐".repeat(Math.round(property.rating / 2))}</span>{" "}
-                      <span className="rating">{property.rating}</span>
+                      <span className="stars">
+                        {Array.from({ length: Math.round(property.rating / 2) }).map((_, i) => (
+                          <FaStar key={i} color="gold" />
+                        ))}
+                      </span>{" "}
+                      {property.rating}
                     </p>
-                    <button className="book-btn">Book Now</button>
+                    </div>
+                    {/* <button className="book-btn">Book Now</button> */}
                   </div>
+
+                    <button className="book-btn">Book Now</button>
                 </Popup>
               )}
             </div>

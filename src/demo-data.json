@@ -5,7 +5,7 @@
     "type": "Unipole",
     "rating": 9.5,
     "coords": [80.209, 12.917],
-    "image": "https://5.imimg.com/data5/ANDROID/Default/2022/10/KB/MB/ID/8895765/product-jpeg.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "type": "Gantry",
     "rating": 9.2,
     "coords": [80.234, 13.041],
-    "image": "https://media.istockphoto.com/id/1320330053/photo/digital-billboard-advertising-screen-on-the-street.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "type": "Digital Billboard",
     "rating": 9.8,
     "coords": [80.259, 13.061],
-    "image": "https://media.gettyimages.com/id/1212001/photo/times-square-new-york-city.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "type": "Hoarding",
     "rating": 8.7,
     "coords": [80.241, 12.901],
-    "image": "https://media.istockphoto.com/id/1212022585/photo/outdoor-advertising-billboards-in-the-city.jpg"
+     "image": "./public/banner-mock.jpg"
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "type": "Unipole",
     "rating": 8.9,
     "coords": [80.208, 13.006],
-    "image": "https://media.istockphoto.com/id/1304000331/photo/digital-billboard-display-advertising-on-a-building.jpg"
+     "image": "./public/banner-mock.jpg"
   },
   {
     "id": 6,
@@ -45,7 +45,7 @@
     "type": "Gantry",
     "rating": 9.1,
     "coords": [80.267, 13.005],
-    "image": "https://media.istockphoto.com/id/1322189862/photo/digital-billboard-display-advertising-screen.jpg"
+     "image": "./public/banner-mock.jpg"
   },
   {
     "id": 7,
@@ -53,7 +53,7 @@
     "type": "Digital Billboard",
     "rating": 8.5,
     "coords": [80.156, 13.035],
-    "image": "https://media.istockphoto.com/id/1344942155/photo/digital-billboard-advertising-screen-on-building.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 8,
@@ -61,7 +61,7 @@
     "type": "Hoarding",
     "rating": 8.8,
     "coords": [80.218, 12.978],
-    "image": "https://media.istockphoto.com/id/1334435003/photo/outdoor-advertising-billboard-on-the-street.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 9,
@@ -69,7 +69,7 @@
     "type": "Unipole",
     "rating": 8.6,
     "coords": [80.147, 12.951],
-    "image": "https://media.istockphoto.com/id/1368428634/photo/digital-billboard-advertising-screen-on-building-facade.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 10,
@@ -77,7 +77,7 @@
     "type": "Gantry",
     "rating": 9.0,
     "coords": [80.117, 12.925],
-    "image": "https://media.istockphoto.com/id/1368428634/photo/digital-billboard-advertising-screen-on-building-facade.jpg"
+     "image": "./public/banner-mock.jpg"
   },
   {
     "id": 11,
@@ -85,7 +85,7 @@
     "type": "Digital Billboard",
     "rating": 9.3,
     "coords": [80.220, 13.020],
-    "image": "https://media.istockphoto.com/id/1314908652/photo/empty-billboard-in-the-city.jpg"
+     "image": "./public/banner-mock.jpg"
   },
   {
     "id": 12,
@@ -93,7 +93,7 @@
     "type": "Hoarding",
     "rating": 8.7,
     "coords": [80.270, 13.030],
-    "image": "https://media.istockphoto.com/id/1212003334/photo/big-empty-billboard.jpg"
+     "image": "./public/banner-mock.jpg"
   },
   {
     "id": 13,
@@ -101,7 +101,7 @@
     "type": "Unipole",
     "rating": 9.1,
     "coords": [80.265, 12.980],
-    "image": "https://media.istockphoto.com/id/1368430355/photo/large-digital-billboard-on-road.jpg"
+     "image": "./public/banner-mock.jpg"
   },
   {
     "id": 14,
@@ -109,7 +109,7 @@
     "type": "Gantry",
     "rating": 8.8,
     "coords": [80.140, 12.960],
-    "image": "https://media.istockphoto.com/id/1334432201/photo/digital-billboard-display.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 15,
@@ -117,7 +117,7 @@
     "type": "Digital Billboard",
     "rating": 9.4,
     "coords": [80.250, 13.070],
-    "image": "https://media.istockphoto.com/id/1304018329/photo/bright-digital-billboard-in-city.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 16,
@@ -125,7 +125,7 @@
     "type": "Hoarding",
     "rating": 8.5,
     "coords": [80.210, 13.015],
-    "image": "https://media.istockphoto.com/id/1320330214/photo/digital-billboard.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 17,
@@ -133,7 +133,7 @@
     "type": "Unipole",
     "rating": 9.0,
     "coords": [80.235, 13.065],
-    "image": "https://media.istockphoto.com/id/1314430987/photo/billboard-mockup.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 18,
@@ -141,7 +141,7 @@
     "type": "Digital Billboard",
     "rating": 9.6,
     "coords": [80.205, 13.050],
-    "image": "https://media.istockphoto.com/id/1320330501/photo/big-led-billboard.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 19,
@@ -149,7 +149,7 @@
     "type": "Gantry",
     "rating": 8.9,
     "coords": [80.240, 13.120],
-    "image": "https://media.istockphoto.com/id/1320330333/photo/large-digital-billboard.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 20,
@@ -157,7 +157,7 @@
     "type": "Hoarding",
     "rating": 8.6,
     "coords": [80.090, 13.110],
-    "image": "https://media.istockphoto.com/id/1212003235/photo/empty-led-billboard-in-the-city.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 21,
@@ -165,7 +165,7 @@
     "type": "Digital Billboard",
     "rating": 9.2,
     "coords": [80.265, 13.055],
-    "image": "https://media.istockphoto.com/id/1314430330/photo/digital-billboard-in-shopping-district.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 22,
@@ -173,7 +173,7 @@
     "type": "Unipole",
     "rating": 8.7,
     "coords": [80.095, 13.045],
-    "image": "https://media.istockphoto.com/id/1344942010/photo/big-billboard-on-roadside.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 23,
@@ -181,7 +181,7 @@
     "type": "Hoarding",
     "rating": 9.0,
     "coords": [80.255, 13.080],
-    "image": "https://media.istockphoto.com/id/1322189999/photo/led-billboard-on-building.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 24,
@@ -189,7 +189,7 @@
     "type": "Digital Billboard",
     "rating": 9.4,
     "coords": [80.200, 13.030],
-    "image": "https://media.istockphoto.com/id/1368430110/photo/empty-digital-advertising-board.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 25,
@@ -197,7 +197,7 @@
     "type": "Gantry",
     "rating": 8.5,
     "coords": [80.215, 13.040],
-    "image": "https://media.istockphoto.com/id/1212001000/photo/outdoor-led-display.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 26,
@@ -205,7 +205,7 @@
     "type": "Hoarding",
     "rating": 8.8,
     "coords": [80.205, 13.025],
-    "image": "https://media.istockphoto.com/id/1368428555/photo/big-digital-billboard-at-city-square.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 27,
@@ -213,7 +213,7 @@
     "type": "Unipole",
     "rating": 9.1,
     "coords": [80.245, 13.050],
-    "image": "https://media.istockphoto.com/id/1320330401/photo/outdoor-billboard-in-business-district.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 28,
@@ -221,7 +221,7 @@
     "type": "Digital Billboard",
     "rating": 9.5,
     "coords": [80.245, 12.965],
-    "image": "https://media.istockphoto.com/id/1212002000/photo/led-billboard-in-urban-area.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 29,
@@ -229,7 +229,7 @@
     "type": "Hoarding",
     "rating": 8.6,
     "coords": [80.240, 12.950],
-    "image": "https://media.istockphoto.com/id/1344942020/photo/digital-led-advertising-board.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 30,
@@ -237,7 +237,7 @@
     "type": "Unipole",
     "rating": 8.9,
     "coords": [80.150, 13.110],
-    "image": "https://media.istockphoto.com/id/1334435102/photo/digital-outdoor-led-screen.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 31,
@@ -245,7 +245,7 @@
     "type": "Digital Billboard",
     "rating": 9.6,
     "coords": [80.235, 12.900],
-    "image": "https://media.istockphoto.com/id/1368430250/photo/large-digital-advertising-billboard.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 32,
@@ -253,7 +253,7 @@
     "type": "Gantry",
     "rating": 8.7,
     "coords": [80.225, 13.120],
-    "image": "https://media.istockphoto.com/id/1212004445/photo/outdoor-led-screen-on-road.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 33,
@@ -261,7 +261,7 @@
     "type": "Hoarding",
     "rating": 9.1,
     "coords": [80.240, 13.000],
-    "image": "https://media.istockphoto.com/id/1320330251/photo/led-billboard-in-residential-area.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 34,
@@ -269,7 +269,7 @@
     "type": "Unipole",
     "rating": 8.8,
     "coords": [80.240, 13.150],
-    "image": "https://media.istockphoto.com/id/1314430990/photo/digital-advertising-billboard-on-street.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 35,
@@ -277,7 +277,7 @@
     "type": "Digital Billboard",
     "rating": 9.3,
     "coords": [80.210, 13.070],
-    "image": "https://media.istockphoto.com/id/1368430199/photo/modern-led-billboard.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 36,
@@ -285,7 +285,7 @@
     "type": "Hoarding",
     "rating": 8.5,
     "coords": [80.290, 13.120],
-    "image": "https://media.istockphoto.com/id/1334435999/photo/big-billboard-on-main-road.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 37,
@@ -293,7 +293,7 @@
     "type": "Gantry",
     "rating": 8.9,
     "coords": [80.240, 13.140],
-    "image": "https://media.istockphoto.com/id/1212003339/photo/digital-outdoor-led-advertising.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 38,
@@ -301,7 +301,7 @@
     "type": "Unipole",
     "rating": 9.0,
     "coords": [80.220, 12.935],
-    "image": "https://media.istockphoto.com/id/1368430305/photo/digital-led-screen-on-road.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 39,
@@ -309,7 +309,7 @@
     "type": "Hoarding",
     "rating": 8.6,
     "coords": [80.275, 13.170],
-    "image": "https://media.istockphoto.com/id/1212001223/photo/outdoor-billboard-on-highway.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 40,
@@ -317,7 +317,7 @@
     "type": "Digital Billboard",
     "rating": 9.2,
     "coords": [80.100, 12.880],
-    "image": "https://media.istockphoto.com/id/1320330550/photo/digital-led-billboard-on-street.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 41,
@@ -325,7 +325,7 @@
     "type": "Digital Billboard",
     "rating": 9.3,
     "coords": [80.120, 12.920],
-    "image": "https://media.istockphoto.com/id/1368430266/photo/digital-led-billboard-in-city.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 42,
@@ -333,7 +333,7 @@
     "type": "Unipole",
     "rating": 8.7,
     "coords": [80.090, 13.120],
-    "image": "https://media.istockphoto.com/id/1212001100/photo/outdoor-advertising-board.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 43,
@@ -341,7 +341,7 @@
     "type": "Hoarding",
     "rating": 8.9,
     "coords": [80.060, 12.830],
-    "image": "https://media.istockphoto.com/id/1334435888/photo/digital-outdoor-led-screen.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 44,
@@ -349,7 +349,7 @@
     "type": "Digital Billboard",
     "rating": 9.4,
     "coords": [80.140, 12.950],
-    "image": "https://media.istockphoto.com/id/1344941991/photo/modern-billboard-on-street.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 45,
@@ -357,7 +357,7 @@
     "type": "Gantry",
     "rating": 8.8,
     "coords": [80.250, 13.120],
-    "image": "https://media.istockphoto.com/id/1212003400/photo/outdoor-led-advertising.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 46,
@@ -365,7 +365,7 @@
     "type": "Hoarding",
     "rating": 8.6,
     "coords": [80.160, 12.950],
-    "image": "https://media.istockphoto.com/id/1368430155/photo/digital-billboard-in-urban-area.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 47,
@@ -373,7 +373,7 @@
     "type": "Unipole",
     "rating": 9.1,
     "coords": [80.270, 13.030],
-    "image": "https://media.istockphoto.com/id/1334435666/photo/led-billboard-on-building.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 48,
@@ -381,7 +381,7 @@
     "type": "Digital Billboard",
     "rating": 9.5,
     "coords": [80.190, 12.910],
-    "image": "https://media.istockphoto.com/id/1368430330/photo/large-digital-billboard.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 49,
@@ -389,7 +389,7 @@
     "type": "Hoarding",
     "rating": 9.0,
     "coords": [80.220, 13.090],
-    "image": "https://media.istockphoto.com/id/1212004566/photo/outdoor-led-display-board.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 50,
@@ -397,7 +397,7 @@
     "type": "Unipole",
     "rating": 8.7,
     "coords": [80.155, 13.040],
-    "image": "https://media.istockphoto.com/id/1344942100/photo/empty-billboard-on-road.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 51,
@@ -405,7 +405,7 @@
     "type": "Digital Billboard",
     "rating": 9.3,
     "coords": [80.210, 13.010],
-    "image": "https://media.istockphoto.com/id/1334436010/photo/modern-digital-billboard.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 52,
@@ -413,7 +413,7 @@
     "type": "Gantry",
     "rating": 8.9,
     "coords": [80.225, 13.020],
-    "image": "https://media.istockphoto.com/id/1368429999/photo/led-billboard-on-highway.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 53,
@@ -421,7 +421,7 @@
     "type": "Hoarding",
     "rating": 9.2,
     "coords": [80.210, 12.975],
-    "image": "https://media.istockphoto.com/id/1212003409/photo/outdoor-led-billboard.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 54,
@@ -429,7 +429,7 @@
     "type": "Unipole",
     "rating": 8.6,
     "coords": [80.260, 13.000],
-    "image": "https://media.istockphoto.com/id/1334435677/photo/digital-outdoor-billboard.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 55,
@@ -437,7 +437,7 @@
     "type": "Digital Billboard",
     "rating": 9.5,
     "coords": [80.080, 12.870],
-    "image": "https://media.istockphoto.com/id/1368430180/photo/led-billboard-in-urban-square.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 56,
@@ -445,7 +445,7 @@
     "type": "Hoarding",
     "rating": 8.8,
     "coords": [80.170, 13.120],
-    "image": "https://media.istockphoto.com/id/1212002222/photo/big-billboard-on-road.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 57,
@@ -453,7 +453,7 @@
     "type": "Gantry",
     "rating": 9.0,
     "coords": [80.245, 12.850],
-    "image": "https://media.istockphoto.com/id/1334435980/photo/outdoor-digital-led-screen.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 58,
@@ -461,7 +461,7 @@
     "type": "Unipole",
     "rating": 9.1,
     "coords": [80.240, 13.060],
-    "image": "https://media.istockphoto.com/id/1368430122/photo/modern-led-billboard-in-town.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 59,
@@ -469,7 +469,7 @@
     "type": "Digital Billboard",
     "rating": 9.4,
     "coords": [80.200, 13.070],
-    "image": "https://media.istockphoto.com/id/1344942222/photo/led-billboard-in-commercial-area.jpg"
+    "image": "./public/banner-mock.jpg"
   },
   {
     "id": 60,
@@ -477,6 +477,6 @@
     "type": "Hoarding",
     "rating": 8.9,
     "coords": [80.270, 13.060],
-    "image": "https://media.istockphoto.com/id/1334435550/photo/digital-outdoor-billboard-in-city.jpg"
+    "image": "./public/banner-mock.jpg"
   }
 ]

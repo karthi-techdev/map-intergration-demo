@@ -99,44 +99,65 @@ body {
   bottom: -20px;
 }
 
+.round-img-pointer {
+    transform: rotate(45deg);
+    display: flex;
+    height: 60px;
+    width: 60px;
+    border-radius: 340px;
+    overflow: hidden;
+}
+
 .marker-pointer img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: rotate(45deg);
 }
 
 /* Popup Card */
 .popup-card {
   width: 260px;
-  background: #1e1b4b;
-  border-radius: 16px;
-  padding: 12px;
+  background: #20183F;
+  border-radius: 30px;
+  padding: 10px;
   color: #fff;
-  font-family: 'Host Grotesk Variable', sans-serif;
-  text-align: center;
+  text-align: left;
+  font-family: 'Host Grotesk Variable', sans-serif !important;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
 .popup-img {
   width: 100%;
-  border-radius: 12px;
-  margin-bottom: 10px;
+  border-radius: 30px;
+  margin-bottom: 8px;
+}
+
+.popup-card .info {
+    margin: 0px 10px 0px 10px;
 }
 
 .popup-card h3 {
-  margin: 6px 0;
-  font-size: 15px;
+  margin: 0px 0;
+  font-size: 14px;
   font-weight: 600;
 }
 
 .popup-card p {
-  font-size: 13px;
-  color: #d1d5db;
-}
+    font-size: 13px;
+    color: #d1d5db;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+}   
 
 .popup-card .stars {
   color: #facc15;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 4px;
 }
 
 .popup-card .rating {
@@ -147,15 +168,30 @@ body {
 
 /* Button */
 .book-btn {
-  margin-top: 10px;
-  background: linear-gradient(to right, #8b5cf6, #6366f1);
-  border: none;
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 12px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
+    background: #7F6AF7;
+    border: none;
+    color: #fff;
+    width: 100%;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    padding-top: 42px;
+    padding-bottom: 15px;
+    position: absolute;
+    top: 224px;
+    z-index: -1;
+    transition: 0.3s ease-out;
+}
+
+.maplibregl-popup-content {
+    font-family: 'Host Grotesk Variable', sans-serif !important;
+}
+
+.maplibregl-popup-content:hover .book-btn {
+   top: 270px;
+   transition: 0.3s ease-in;
 }
 
 .book-btn:hover {
@@ -180,4 +216,31 @@ body {
 .mapboxgl-popup-close-button:hover {
   background-color: #7c3aed;
   transform: scale(1.1);
+}
+
+.maplibregl-popup-content {
+    background: none !important;
+    border-radius: 3px;
+    box-shadow: none !important;
+    padding: 0px !important;
+    padding-top: 15px !important;
+    pointer-events: auto;
+    position: relative;
+    width: fit-content;
+}
+
+.maplibregl-popup-close-button {
+  display: none;
+}
+
+.maplibregl-popup-anchor-top .maplibregl-popup-tip {
+   display: none;
+}
+
+.maplibregl-popup {
+  align-items: center !important;
+}
+
+.maplibregl-map {
+  width: auto !important;
 }
