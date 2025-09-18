@@ -12,55 +12,118 @@ interface MapInterfaceProps {
   styleUrl?: string;
 }
 
-const property = {
-  id: 1,
-  title: "Focus Media, Medavakkam Flyover",
-  type: "Unipole",
-  rating: 9.5,
-  coords: [80.209, 12.917], // Chennai sample [lng, lat]
-  image:
-    "https://5.imimg.com/data5/ANDROID/Default/2022/10/KB/MB/ID/8895765/product-jpeg.jpg",
-};
+// Sample data for 10 billboard locations in Chennai
+import properties from "./demo-data.json";
 
 const MapInterface: FC<MapInterfaceProps> = ({
   center = [80.209, 12.917],
-  zoom = 13,
+  zoom = 11,
   height = "100vh",
   width = "100vw",
   styleUrl = "/bookadzone-map-style.json",
 }) => {
-  const [hovered, setHovered] = useState(false);
-  const [selected, setSelected] = useState(false);
-  const [pointerVisible, setPointerVisible] = useState(false);
-  const [pointerAnimating, setPointerAnimating] = useState(false);
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const [selectedId, setSelectedId] = useState<number | null>(null);
+  const [pointerVisible, setPointerVisible] = useState<Record<number, boolean>>({});
+  const [pointerAnimating, setPointerAnimating] = useState<Record<number, boolean>>({});
+  const [viewState, setViewState] = useState({
+    longitude: center[0],
+    latitude: center[1],
+    zoom: zoom,
+  });
+  const [markerVisibility, setMarkerVisibility] = useState<Record<number, boolean>>({});
+  const [markerAnimating, setMarkerAnimating] = useState<Record<number, boolean>>({});
 
-  const showPointer = hovered || selected;
+  // Initialize states for all properties
+  useEffect(() => {
+    const initialPointerState: Record<number, boolean> = {};
+    const initialAnimatingState: Record<number, boolean> = {};
+    const initialVisibilityState: Record<number, boolean> = {};
+    const initialMarkerAnimState: Record<number, boolean> = {};
+    
+    properties.forEach(property => {
+      initialPointerState[property.id] = false;
+      initialAnimatingState[property.id] = false;
+      initialVisibilityState[property.id] = true;
+      initialMarkerAnimState[property.id] = false;
+    });
+    
+    setPointerVisible(initialPointerState);
+    setPointerAnimating(initialAnimatingState);
+    setMarkerVisibility(initialVisibilityState);
+    setMarkerAnimating(initialMarkerAnimState);
+  }, []);
 
   // Handle pointer animation when hovered or selected
   useEffect(() => {
-    if (showPointer && !pointerVisible && !pointerAnimating) {
-      setPointerAnimating(true);
-      setPointerVisible(true);
-      setTimeout(() => setPointerAnimating(false), 300);
-    } else if (!showPointer && pointerVisible && !pointerAnimating) {
-      setPointerAnimating(true);
-      setTimeout(() => {
-        setPointerVisible(false);
-        setPointerAnimating(false);
-      }, 300);
+    properties.forEach(property => {
+      const showPointer = hoveredId === property.id || selectedId === property.id;
+      
+      if (showPointer && !pointerVisible[property.id] && !pointerAnimating[property.id]) {
+        setPointerAnimating(prev => ({ ...prev, [property.id]: true }));
+        setPointerVisible(prev => ({ ...prev, [property.id]: true }));
+        
+        setTimeout(() => {
+          setPointerAnimating(prev => ({ ...prev, [property.id]: false }));
+        }, 300);
+      } else if (!showPointer && pointerVisible[property.id] && !pointerAnimating[property.id]) {
+        setPointerAnimating(prev => ({ ...prev, [property.id]: true }));
+        
+        setTimeout(() => {
+          setPointerVisible(prev => ({ ...prev, [property.id]: false }));
+          setPointerAnimating(prev => ({ ...prev, [property.id]: false }));
+        }, 300);
+      }
+    });
+  }, [hoveredId, selectedId, pointerVisible, pointerAnimating]);
+
+  // Handle marker visibility based on zoom level
+  useEffect(() => {
+    properties.forEach(property => {
+      const shouldBeVisible = shouldMarkerBeVisible(property.id, viewState.zoom);
+      const isCurrentlyVisible = markerVisibility[property.id];
+      
+      if (shouldBeVisible !== isCurrentlyVisible && !markerAnimating[property.id]) {
+        setMarkerAnimating(prev => ({ ...prev, [property.id]: true }));
+        
+        if (shouldBeVisible) {
+          // Fade in
+          setMarkerVisibility(prev => ({ ...prev, [property.id]: true }));
+          setTimeout(() => {
+            setMarkerAnimating(prev => ({ ...prev, [property.id]: false }));
+          }, 300);
+        } else {
+          // Fade out
+          setTimeout(() => {
+            setMarkerVisibility(prev => ({ ...prev, [property.id]: false }));
+            setMarkerAnimating(prev => ({ ...prev, [property.id]: false }));
+          }, 300);
+        }
+      }
+    });
+  }, [viewState.zoom, markerVisibility, markerAnimating]);
+
+  // Determine if a marker should be visible based on zoom level
+  const shouldMarkerBeVisible = (id: number, zoom: number) => {
+    // Show fewer markers when zoomed out, more when zoomed in
+    if (zoom < 10) {
+      return id <= 3; // Show only first 3 markers
+    } else if (zoom < 12) {
+      return id <= 6; // Show first 6 markers
+    } else {
+      return true; // Show all markers
     }
-  }, [showPointer, pointerVisible, pointerAnimating]);
+  };
 
   // Close popup when clicking on the map
   useEffect(() => {
     const handleMapClick = () => {
-      if (selected) {
-        setSelected(false);
-        setHovered(false);
+      if (selectedId !== null) {
+        setSelectedId(null);
+        setHoveredId(null);
       }
     };
 
-    // Add event listener to the map container
     const mapContainer = document.querySelector('.map-container');
     if (mapContainer) {
       mapContainer.addEventListener('click', handleMapClick);
@@ -71,80 +134,93 @@ const MapInterface: FC<MapInterfaceProps> = ({
         mapContainer.removeEventListener('click', handleMapClick);
       }
     };
-  }, [selected]);
+  }, [selectedId]);
 
   return (
     <div className="map-container">
       <Map
         mapLib={maplibregl}
-        initialViewState={{
-          longitude: center[0],
-          latitude: center[1],
-          zoom,
-        }}
+        {...viewState}
+        onMove={evt => setViewState(evt.viewState)}
         style={{ height, width }}
         mapStyle={styleUrl}
       >
         <NavigationControl position="top-right" />
 
-        {/* Marker */}
-        <Marker
-          longitude={property.coords[0]}
-          latitude={property.coords[1]}
-          anchor="center"
-        >
-          <div
-            className="marker-container"
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => !selected && setHovered(false)}
-            onClick={(e) => {
-              e.stopPropagation();
-              setSelected(true);
-            }}
-          >
-            {/* Ripple effect when hovered or selected */}
-            {(hovered || selected) && (
-              <div className="marker-ripple"></div>
-            )}
-            
-            {/* Dot with size change on hover/selection */}
-            <div className={`marker-dot ${hovered || selected ? 'expanded' : ''}`}></div>
+        {/* Only render visible markers based on zoom level with transitions */}
+        {properties.map(property => {
+          const showPointer = hoveredId === property.id || selectedId === property.id;
+          const isVisible = markerVisibility[property.id];
+          const isAnimating = markerAnimating[property.id];
+          
+          if (!isVisible && !isAnimating) return null;
+          
+          return (
+            <div key={property.id}>
+              <Marker
+                longitude={property.coords[0]}
+                latitude={property.coords[1]}
+                anchor="center"
+              >
+                <div
+                  className={`marker-container ${isVisible ? 'visible' : 'hidden'}`}
+                  onMouseEnter={() => setHoveredId(property.id)}
+                  onMouseLeave={() => {
+                    if (selectedId !== property.id) {
+                      setHoveredId(null);
+                    }
+                  }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedId(property.id);
+                  }}
+                >
+                  {/* Ripple effect when hovered or selected */}
+                  {(hoveredId === property.id || selectedId === property.id) && (
+                    <div className="marker-ripple"></div>
+                  )}
+                  
+                  {/* Dot with size change on hover/selection */}
+                  <div className={`marker-dot ${showPointer ? 'expanded' : ''}`}></div>
 
-            {/* Location pointer with smooth animation */}
-            {pointerVisible && (
-              <div className={`marker-pointer ${showPointer ? 'active' : 'inactive'}`}>
-                <img src={property.image} alt="Billboard" />
-              </div>
-            )}
-          </div>
-        </Marker>
+                  {/* Location pointer with smooth animation */}
+                  {pointerVisible[property.id] && (
+                    <div className={`marker-pointer ${showPointer ? 'active' : 'inactive'}`}>
+                      <img src={property.image} alt="Billboard" />
+                    </div>
+                  )}
+                </div>
+              </Marker>
 
-        {/* Popup */}
-        {selected && (
-          <Popup
-            longitude={property.coords[0]}
-            latitude={property.coords[1]}
-            onClose={() => {
-              setSelected(false);
-              setHovered(false);
-            }}
-            anchor="top"
-            closeOnClick={false}
-            closeButton={true}
-            closeOnMove={false}
-          >
-            <div className="popup-card">
-              <img src={property.image} alt="billboard" className="popup-img" />
-              <h3>{property.title}</h3>
-              <p>
-                {property.type}{" "}
-                <span className="stars">⭐⭐⭐⭐⭐</span>{" "}
-                <span className="rating">{property.rating}</span>
-              </p>
-              <button className="book-btn">Book Now</button>
+              {/* Popup for selected property */}
+              {selectedId === property.id && (
+                <Popup
+                  longitude={property.coords[0]}
+                  latitude={property.coords[1]}
+                  onClose={() => {
+                    setSelectedId(null);
+                    setHoveredId(null);
+                  }}
+                  anchor="top"
+                  closeOnClick={false}
+                  closeButton={true}
+                  closeOnMove={false}
+                >
+                  <div className="popup-card">
+                    <img src={property.image} alt="billboard" className="popup-img" />
+                    <h3>{property.title}</h3>
+                    <p>
+                      {property.type}{" "}
+                      <span className="stars">{"⭐".repeat(Math.round(property.rating / 2))}</span>{" "}
+                      <span className="rating">{property.rating}</span>
+                    </p>
+                    <button className="book-btn">Book Now</button>
+                  </div>
+                </Popup>
+              )}
             </div>
-          </Popup>
-        )}
+          );
+        })}
       </Map>
     </div>
   );
