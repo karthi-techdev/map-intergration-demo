@@ -5,7 +5,7 @@
     "type": "Unipole",
     "rating": 9.5,
     "coords": [80.209, 12.917],
-    "image": "./public/banner-mock.jpg"
+    "image": "banner-mock.jpg"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "type": "Gantry",
     "rating": 9.2,
     "coords": [80.234, 13.041],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "type": "Digital Billboard",
     "rating": 9.8,
     "coords": [80.259, 13.061],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "type": "Hoarding",
     "rating": 8.7,
     "coords": [80.241, 12.901],
-     "image": "./public/banner-mock.jpg"
+     "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "type": "Unipole",
     "rating": 8.9,
     "coords": [80.208, 13.006],
-     "image": "./public/banner-mock.jpg"
+     "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 6,
@@ -45,7 +45,7 @@
     "type": "Gantry",
     "rating": 9.1,
     "coords": [80.267, 13.005],
-     "image": "./public/banner-mock.jpg"
+     "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 7,
@@ -53,7 +53,7 @@
     "type": "Digital Billboard",
     "rating": 8.5,
     "coords": [80.156, 13.035],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 8,
@@ -61,7 +61,7 @@
     "type": "Hoarding",
     "rating": 8.8,
     "coords": [80.218, 12.978],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 9,
@@ -69,7 +69,7 @@
     "type": "Unipole",
     "rating": 8.6,
     "coords": [80.147, 12.951],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 10,
@@ -77,7 +77,7 @@
     "type": "Gantry",
     "rating": 9.0,
     "coords": [80.117, 12.925],
-     "image": "./public/banner-mock.jpg"
+     "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 11,
@@ -85,7 +85,7 @@
     "type": "Digital Billboard",
     "rating": 9.3,
     "coords": [80.220, 13.020],
-     "image": "./public/banner-mock.jpg"
+     "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 12,
@@ -93,7 +93,7 @@
     "type": "Hoarding",
     "rating": 8.7,
     "coords": [80.270, 13.030],
-     "image": "./public/banner-mock.jpg"
+     "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 13,
@@ -101,7 +101,7 @@
     "type": "Unipole",
     "rating": 9.1,
     "coords": [80.265, 12.980],
-     "image": "./public/banner-mock.jpg"
+     "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 14,
@@ -109,7 +109,7 @@
     "type": "Gantry",
     "rating": 8.8,
     "coords": [80.140, 12.960],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 15,
@@ -117,7 +117,7 @@
     "type": "Digital Billboard",
     "rating": 9.4,
     "coords": [80.250, 13.070],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 16,
@@ -125,7 +125,7 @@
     "type": "Hoarding",
     "rating": 8.5,
     "coords": [80.210, 13.015],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 17,
@@ -133,7 +133,7 @@
     "type": "Unipole",
     "rating": 9.0,
     "coords": [80.235, 13.065],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 18,
@@ -141,7 +141,7 @@
     "type": "Digital Billboard",
     "rating": 9.6,
     "coords": [80.205, 13.050],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 19,
@@ -149,7 +149,7 @@
     "type": "Gantry",
     "rating": 8.9,
     "coords": [80.240, 13.120],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 20,
@@ -157,7 +157,7 @@
     "type": "Hoarding",
     "rating": 8.6,
     "coords": [80.090, 13.110],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 21,
@@ -165,7 +165,7 @@
     "type": "Digital Billboard",
     "rating": 9.2,
     "coords": [80.265, 13.055],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 22,
@@ -173,7 +173,7 @@
     "type": "Unipole",
     "rating": 8.7,
     "coords": [80.095, 13.045],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 23,
@@ -181,7 +181,7 @@
     "type": "Hoarding",
     "rating": 9.0,
     "coords": [80.255, 13.080],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 24,
@@ -189,7 +189,7 @@
     "type": "Digital Billboard",
     "rating": 9.4,
     "coords": [80.200, 13.030],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 25,
@@ -197,7 +197,7 @@
     "type": "Gantry",
     "rating": 8.5,
     "coords": [80.215, 13.040],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 26,
@@ -205,7 +205,7 @@
     "type": "Hoarding",
     "rating": 8.8,
     "coords": [80.205, 13.025],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 27,
@@ -213,7 +213,7 @@
     "type": "Unipole",
     "rating": 9.1,
     "coords": [80.245, 13.050],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 28,
@@ -221,7 +221,7 @@
     "type": "Digital Billboard",
     "rating": 9.5,
     "coords": [80.245, 12.965],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 29,
@@ -229,7 +229,7 @@
     "type": "Hoarding",
     "rating": 8.6,
     "coords": [80.240, 12.950],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 30,
@@ -237,7 +237,7 @@
     "type": "Unipole",
     "rating": 8.9,
     "coords": [80.150, 13.110],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 31,
@@ -245,7 +245,7 @@
     "type": "Digital Billboard",
     "rating": 9.6,
     "coords": [80.235, 12.900],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 32,
@@ -253,7 +253,7 @@
     "type": "Gantry",
     "rating": 8.7,
     "coords": [80.225, 13.120],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 33,
@@ -261,7 +261,7 @@
     "type": "Hoarding",
     "rating": 9.1,
     "coords": [80.240, 13.000],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 34,
@@ -269,7 +269,7 @@
     "type": "Unipole",
     "rating": 8.8,
     "coords": [80.240, 13.150],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 35,
@@ -277,7 +277,7 @@
     "type": "Digital Billboard",
     "rating": 9.3,
     "coords": [80.210, 13.070],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 36,
@@ -285,7 +285,7 @@
     "type": "Hoarding",
     "rating": 8.5,
     "coords": [80.290, 13.120],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 37,
@@ -293,7 +293,7 @@
     "type": "Gantry",
     "rating": 8.9,
     "coords": [80.240, 13.140],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 38,
@@ -301,7 +301,7 @@
     "type": "Unipole",
     "rating": 9.0,
     "coords": [80.220, 12.935],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 39,
@@ -309,7 +309,7 @@
     "type": "Hoarding",
     "rating": 8.6,
     "coords": [80.275, 13.170],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 40,
@@ -317,7 +317,7 @@
     "type": "Digital Billboard",
     "rating": 9.2,
     "coords": [80.100, 12.880],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 41,
@@ -325,7 +325,7 @@
     "type": "Digital Billboard",
     "rating": 9.3,
     "coords": [80.120, 12.920],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 42,
@@ -333,7 +333,7 @@
     "type": "Unipole",
     "rating": 8.7,
     "coords": [80.090, 13.120],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 43,
@@ -341,7 +341,7 @@
     "type": "Hoarding",
     "rating": 8.9,
     "coords": [80.060, 12.830],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 44,
@@ -349,7 +349,7 @@
     "type": "Digital Billboard",
     "rating": 9.4,
     "coords": [80.140, 12.950],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 45,
@@ -357,7 +357,7 @@
     "type": "Gantry",
     "rating": 8.8,
     "coords": [80.250, 13.120],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 46,
@@ -365,7 +365,7 @@
     "type": "Hoarding",
     "rating": 8.6,
     "coords": [80.160, 12.950],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 47,
@@ -373,7 +373,7 @@
     "type": "Unipole",
     "rating": 9.1,
     "coords": [80.270, 13.030],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 48,
@@ -381,7 +381,7 @@
     "type": "Digital Billboard",
     "rating": 9.5,
     "coords": [80.190, 12.910],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 49,
@@ -389,7 +389,7 @@
     "type": "Hoarding",
     "rating": 9.0,
     "coords": [80.220, 13.090],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 50,
@@ -397,7 +397,7 @@
     "type": "Unipole",
     "rating": 8.7,
     "coords": [80.155, 13.040],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 51,
@@ -405,7 +405,7 @@
     "type": "Digital Billboard",
     "rating": 9.3,
     "coords": [80.210, 13.010],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 52,
@@ -413,7 +413,7 @@
     "type": "Gantry",
     "rating": 8.9,
     "coords": [80.225, 13.020],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 53,
@@ -421,7 +421,7 @@
     "type": "Hoarding",
     "rating": 9.2,
     "coords": [80.210, 12.975],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 54,
@@ -429,7 +429,7 @@
     "type": "Unipole",
     "rating": 8.6,
     "coords": [80.260, 13.000],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 55,
@@ -437,7 +437,7 @@
     "type": "Digital Billboard",
     "rating": 9.5,
     "coords": [80.080, 12.870],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 56,
@@ -445,7 +445,7 @@
     "type": "Hoarding",
     "rating": 8.8,
     "coords": [80.170, 13.120],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 57,
@@ -453,7 +453,7 @@
     "type": "Gantry",
     "rating": 9.0,
     "coords": [80.245, 12.850],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 58,
@@ -461,7 +461,7 @@
     "type": "Unipole",
     "rating": 9.1,
     "coords": [80.240, 13.060],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 59,
@@ -469,7 +469,7 @@
     "type": "Digital Billboard",
     "rating": 9.4,
     "coords": [80.200, 13.070],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   },
   {
     "id": 60,
@@ -477,6 +477,6 @@
     "type": "Hoarding",
     "rating": 8.9,
     "coords": [80.270, 13.060],
-    "image": "./public/banner-mock.jpg"
+    "image": "./assets/banner-mock.jpg"
   }
 ]

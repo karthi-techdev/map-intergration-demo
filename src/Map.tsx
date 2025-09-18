@@ -4,6 +4,7 @@ import Map, { NavigationControl, Marker, Popup } from "react-map-gl/maplibre";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { FaStar } from "react-icons/fa";
+import bannerImg from './assets/banner-mock.jpg'
 
 interface MapInterfaceProps {
   center?: [number, number];
@@ -188,7 +189,7 @@ const MapInterface: FC<MapInterfaceProps> = ({
                   {pointerVisible[property.id] && (
                     <div className={`marker-pointer ${showPointer ? 'active' : 'inactive'}`}>
                       <div className="round-img-pointer">
-                         <img src={property.image} alt="Billboard" />
+                         <img src={bannerImg} alt="Billboard" />
                       </div>
                     </div>
                   )}
@@ -210,7 +211,7 @@ const MapInterface: FC<MapInterfaceProps> = ({
                   closeOnMove={false}
                 >
                   <div className="popup-card">
-                    <img src={property.image} alt="billboard" className="popup-img" />
+                    <img src={bannerImg} alt="billboard" className="popup-img" />
                     <div className="info">
                     <h3>{property.title}</h3>
                     <p>
