@@ -15,7 +15,8 @@ interface MapInterfaceProps {
 }
 
 // Sample data for 10 billboard locations in Chennai
-import properties from "./demo-data.json";
+import demoData from "./demo-data.json";
+import { Link } from "react-router-dom";
 
 const MapInterface: FC<MapInterfaceProps> = ({
   center = [80.209, 12.917],
@@ -35,6 +36,17 @@ const MapInterface: FC<MapInterfaceProps> = ({
   });
   const [markerVisibility, setMarkerVisibility] = useState<Record<number, boolean>>({});
   const [markerAnimating, setMarkerAnimating] = useState<Record<number, boolean>>({});
+  const [properties, setProperties] = useState<any[]>(demoData); // ✅ use state
+
+  // ✅ Load data from localStorage (or fallback to demo-data.json)
+  useEffect(() => {
+    const stored = localStorage.getItem("properties");
+    if (stored) {
+      setProperties(JSON.parse(stored));
+    } else {
+      setProperties(demoData);
+    }
+  }, []);
 
   // Initialize states for all properties
   useEffect(() => {
@@ -54,7 +66,7 @@ const MapInterface: FC<MapInterfaceProps> = ({
     setPointerAnimating(initialAnimatingState);
     setMarkerVisibility(initialVisibilityState);
     setMarkerAnimating(initialMarkerAnimState);
-  }, []);
+  }, [properties]); // ✅ re-run when properties update
 
   // Handle pointer animation when hovered or selected
   useEffect(() => {
@@ -77,7 +89,7 @@ const MapInterface: FC<MapInterfaceProps> = ({
         }, 300);
       }
     });
-  }, [hoveredId, selectedId, pointerVisible, pointerAnimating]);
+  }, [hoveredId, selectedId, pointerVisible, pointerAnimating, properties]);
 
   // Handle marker visibility based on zoom level
   useEffect(() => {
@@ -103,17 +115,16 @@ const MapInterface: FC<MapInterfaceProps> = ({
         }
       }
     });
-  }, [viewState.zoom, markerVisibility, markerAnimating]);
+  }, [viewState.zoom, markerVisibility, markerAnimating, properties]);
 
   // Determine if a marker should be visible based on zoom level
   const shouldMarkerBeVisible = (id: number, zoom: number) => {
-    // Show fewer markers when zoomed out, more when zoomed in
     if (zoom < 10) {
-      return id <= 3; // Show only first 3 markers
+      return id <= 3;
     } else if (zoom < 12) {
-      return id <= 6; // Show first 6 markers
+      return id <= 6;
     } else {
-      return true; // Show all markers
+      return true;
     }
   };
 
@@ -149,7 +160,6 @@ const MapInterface: FC<MapInterfaceProps> = ({
       >
         <NavigationControl position="top-right" />
 
-        {/* Only render visible markers based on zoom level with transitions */}
         {properties.map(property => {
           const showPointer = hoveredId === property.id || selectedId === property.id;
           const isVisible = markerVisibility[property.id];
@@ -177,15 +187,12 @@ const MapInterface: FC<MapInterfaceProps> = ({
                     setSelectedId(property.id);
                   }}
                 >
-                  {/* Ripple effect when hovered or selected */}
                   {(hoveredId === property.id || selectedId === property.id) && (
                     <div className="marker-ripple"></div>
                   )}
                   
-                  {/* Dot with size change on hover/selection */}
                   <div className={`marker-dot ${showPointer ? 'expanded' : ''}`}></div>
 
-                  {/* Location pointer with smooth animation */}
                   {pointerVisible[property.id] && (
                     <div className={`marker-pointer ${showPointer ? 'active' : 'inactive'}`}>
                       <div className="round-img-pointer">
@@ -196,7 +203,6 @@ const MapInterface: FC<MapInterfaceProps> = ({
                 </div>
               </Marker>
 
-              {/* Popup for selected property */}
               {selectedId === property.id && (
                 <Popup
                   longitude={property.coords[0]}
@@ -213,27 +219,29 @@ const MapInterface: FC<MapInterfaceProps> = ({
                   <div className="popup-card">
                     <img src={bannerImg} alt="billboard" className="popup-img" />
                     <div className="info">
-                    <h3>{property.title}</h3>
-                    <p>
-                      {property.type}{" "}
-                      <span className="stars">
-                        {Array.from({ length: Math.round(property.rating / 2) }).map((_, i) => (
-                          <FaStar key={i} color="gold" />
-                        ))}
-                      </span>{" "}
-                      {property.rating}
-                    </p>
+                      <h3>{property.title}</h3>
+                      <p>
+                        {property.type}{" "}
+                        <span className="stars">
+                          {Array.from({ length: Math.round(property.rating / 2) }).map((_, i) => (
+                            <FaStar key={i} color="gold" />
+                          ))}
+                        </span>{" "}
+                        {property.rating}
+                      </p>
                     </div>
-                    {/* <button className="book-btn">Book Now</button> */}
                   </div>
-
-                    <button className="book-btn">Book Now</button>
+                  <button className="book-btn">Book Now</button>
                 </Popup>
               )}
             </div>
           );
         })}
       </Map>
+
+      <Link to="/add-listing" className="add-listing-btn">
+        + Add New Listing
+      </Link>
     </div>
   );
 };
