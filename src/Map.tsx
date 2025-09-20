@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import type { FC } from "react";
 import Map, { NavigationControl, Marker, Popup } from "react-map-gl/maplibre";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { FaStar } from "react-icons/fa";
 import bannerImg from './assets/banner-mock.jpg'
+import { Link } from "react-router-dom";
 
 interface MapInterfaceProps {
   center?: [number, number];
@@ -16,7 +17,6 @@ interface MapInterfaceProps {
 
 // Sample data for 10 billboard locations in Chennai
 import demoData from "./demo-data.json";
-import { Link } from "react-router-dom";
 
 const MapInterface: FC<MapInterfaceProps> = ({
   center = [80.209, 12.917],
@@ -36,7 +36,10 @@ const MapInterface: FC<MapInterfaceProps> = ({
   });
   const [markerVisibility, setMarkerVisibility] = useState<Record<number, boolean>>({});
   const [markerAnimating, setMarkerAnimating] = useState<Record<number, boolean>>({});
-  const [properties, setProperties] = useState<any[]>(demoData); // ✅ use state
+  const [properties, setProperties] = useState<any[]>(demoData);
+  const popupRef = useRef<HTMLDivElement>(null);
+  const isDraggingRef = useRef(false);
+  const mouseDownRef = useRef(false);
 
   // ✅ Load data from localStorage (or fallback to demo-data.json)
   useEffect(() => {
@@ -66,7 +69,7 @@ const MapInterface: FC<MapInterfaceProps> = ({
     setPointerAnimating(initialAnimatingState);
     setMarkerVisibility(initialVisibilityState);
     setMarkerAnimating(initialMarkerAnimState);
-  }, [properties]); // ✅ re-run when properties update
+  }, [properties]);
 
   // Handle pointer animation when hovered or selected
   useEffect(() => {
@@ -128,24 +131,57 @@ const MapInterface: FC<MapInterfaceProps> = ({
     }
   };
 
-  // Close popup when clicking on the map
+  // Detect map drag events
   useEffect(() => {
-    const handleMapClick = () => {
-      if (selectedId !== null) {
-        setSelectedId(null);
-        setHoveredId(null);
+    const handleMapMouseDown = () => {
+      mouseDownRef.current = true;
+      isDraggingRef.current = false;
+    };
+
+    const handleMapMouseMove = () => {
+      if (mouseDownRef.current) {
+        isDraggingRef.current = true;
       }
     };
 
-    const mapContainer = document.querySelector('.map-container');
+    const handleMapMouseUp = () => {
+      mouseDownRef.current = false;
+    };
+
+    const mapContainer = document.querySelector('.maplibregl-canvas-container');
     if (mapContainer) {
-      mapContainer.addEventListener('click', handleMapClick);
+      mapContainer.addEventListener('mousedown', handleMapMouseDown);
+      mapContainer.addEventListener('mousemove', handleMapMouseMove);
+      mapContainer.addEventListener('mouseup', handleMapMouseUp);
     }
 
     return () => {
       if (mapContainer) {
-        mapContainer.removeEventListener('click', handleMapClick);
+        mapContainer.removeEventListener('mousedown', handleMapMouseDown);
+        mapContainer.removeEventListener('mousemove', handleMapMouseMove);
+        mapContainer.removeEventListener('mouseup', handleMapMouseUp);
       }
+    };
+  }, []);
+
+  // Close popup when clicking outside of it (on mouse up, not drag)
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      // Only close if it's a click (not drag) and outside the popup
+      if (selectedId !== null && 
+          popupRef.current && 
+          !popupRef.current.contains(event.target as Node) &&
+          !isDraggingRef.current) {
+        setSelectedId(null);
+        setHoveredId(null);
+      }
+      // Reset dragging state
+      isDraggingRef.current = false;
+    };
+
+    document.addEventListener('mouseup', handleClickOutside);
+    return () => {
+      document.removeEventListener('mouseup', handleClickOutside);
     };
   }, [selectedId]);
 
@@ -216,22 +252,24 @@ const MapInterface: FC<MapInterfaceProps> = ({
                   closeButton={true}
                   closeOnMove={false}
                 >
-                  <div className="popup-card">
-                    <img src={bannerImg} alt="billboard" className="popup-img" />
-                    <div className="info">
-                      <h3>{property.title}</h3>
-                      <p>
-                        {property.type}{" "}
-                        <span className="stars">
-                          {Array.from({ length: Math.round(property.rating / 2) }).map((_, i) => (
-                            <FaStar key={i} color="gold" />
-                          ))}
-                        </span>{" "}
-                        {property.rating}
-                      </p>
+                  <div ref={popupRef} onClick={(e) => e.stopPropagation()}>
+                    <div className="popup-card">
+                      <img src={bannerImg} alt="billboard" className="popup-img" />
+                      <div className="info">
+                        <h3>{property.title}</h3>
+                        <p>
+                          {property.type}{" "}
+                          <span className="stars">
+                            {Array.from({ length: Math.round(property.rating / 2) }).map((_, i) => (
+                              <FaStar key={i} color="gold" />
+                            ))}
+                          </span>{" "}
+                          {property.rating}
+                        </p>
+                      </div>
                     </div>
+                    <button className="book-btn">Book Now</button>
                   </div>
-                  <button className="book-btn">Book Now</button>
                 </Popup>
               )}
             </div>
